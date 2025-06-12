@@ -1,0 +1,9 @@
+build/
+*.exe
+*.json
+*.user
+*.log
+*.suo
+*.vcxproj*
+CMakeFiles/
+CMakeCache.txt
