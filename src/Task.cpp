@@ -1,19 +1,25 @@
 #include "Task.h"
+#include <string>
+#include <nlohmann/json.hpp>
 
-
+// Конструктор со статусом по умолчанию
 Task::Task(const std::string& text, const std::string& dueDate)
     : text(text), dueDate(dueDate), status(TaskStatus::Pending) {}
 
-std::string Task::getText() const {
-    return text;
-}
+// Конструктор с указанием статуса
+Task::Task(const std::string& text, TaskStatus status, const std::string& dueDate)
+    : text(text), dueDate(dueDate), status(status) {}
 
-std::string Task::getDueDate() const {
-    return dueDate;
+const std::string& Task::getText() const {
+    return text;
 }
 
 TaskStatus Task::getStatus() const {
     return status;
+}
+
+const std::string& Task::getDueDate() const {
+    return dueDate;
 }
 
 void Task::markCompleted() {
